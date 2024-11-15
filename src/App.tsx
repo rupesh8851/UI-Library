@@ -7,7 +7,7 @@ import { Accordion } from './pages/Accordion.tsx';
 import { AlertingSystem } from './pages/alerts/AlertingSystem.tsx';
 import { Carousel } from './pages/carousel/Carousel.tsx';
 import { Experiment } from './pages/Experiment.tsx';
-import { FeedsWrapper } from './pages/Feeds.tsx';
+import { FeedsWrapper } from './pages/feeds';
 
 function App() {
   return (
