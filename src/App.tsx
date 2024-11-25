@@ -6,8 +6,10 @@ import { About } from './pages/About.tsx';
 import { Accordion } from './pages/Accordion.tsx';
 import { AlertingSystem } from './pages/alerts/AlertingSystem.tsx';
 import { Carousel } from './pages/carousel/Carousel.tsx';
+import { CommentSection } from './pages/comment-box/CommentSection.tsx';
 import { Experiment } from './pages/Experiment.tsx';
 import { FeedsWrapper } from './pages/feeds';
+import { Todo } from './pages/todo/Todo.tsx';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
             <Route path="/experiment" element={<Experiment />} />
             <Route path="/alerts" element={<AlertingSystem />} />
             <Route path="/carousel" element={<Carousel />} />
+            <Route path="/comments" element={<CommentSection />} />
+            <Route path="/todo" element={<Todo />} />
           </Route>
           {/* Standalone route */}
           <Route path="/about" element={<About />} />

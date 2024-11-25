@@ -30,8 +30,16 @@ const sideBarItems: SideBarItemProps[] = [
     to: '/carousel',
   },
   {
+    label: 'Comment Section',
+    to: '/comments',
+  },
+  {
     label: 'Experiment',
     to: '/experiment',
+  },
+  {
+    label: 'Todo',
+    to: '/todo',
   },
 ];
 
