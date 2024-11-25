@@ -8,13 +8,7 @@ import { TodoItem } from './components/TodoItem.tsx';
 import { TaskType } from './ts/types.ts';
 
 export const Todo = () => {
-  const [tasks, setTasks] = useState<TaskType[]>([
-    {
-      id: '32i9453242342',
-      label: 'slkfjlsf sldkfjlsdf alskfj',
-      checked: false,
-    },
-  ]);
+  const [tasks, setTasks] = useState<TaskType[]>([]);
   const [value, setValue] = useState<string>('');
 
   const createTask = () => {
@@ -26,6 +20,20 @@ export const Todo = () => {
     };
 
     setTasks((prevTasks) => [...prevTasks, newTask]);
+    setValue('');
+  };
+
+  const onDeleteTask = (id: string) => {
+    setTasks((prevTasks) => prevTasks?.filter((task) => task.id !== id));
+  };
+
+  const onUpdateTask = (task: TaskType) => {
+    setTasks((prevTasks) =>
+      prevTasks?.map((prevTask) => {
+        if (prevTask.id === task.id) return task;
+        return prevTask;
+      }),
+    );
   };
 
   return (
@@ -34,7 +42,8 @@ export const Todo = () => {
       <div className="flex items-center w-72 space-x-1 ">
         <input
           type="text"
-          className="w-full border-2 h-10 border-slate-400 rounded-md px-2 focus:outline-slate-500 "
+          className="w-full border-2 h-10 border-slate-400 rounded-md px-2 focus:outline-slate-500"
+          value={value}
           onChange={(e) => setValue(e.target.value)}
         />
         <button
@@ -52,8 +61,8 @@ export const Todo = () => {
           <TodoItem
             key={task.id}
             task={task}
-            onDelete={() => {}}
-            onUpdate={() => {}}
+            onDelete={onDeleteTask}
+            onUpdate={onUpdateTask}
           />
         ))}
       </div>

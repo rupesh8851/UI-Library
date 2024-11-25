@@ -10,7 +10,7 @@ import { TodoItemType } from '../ts/types.ts';
 export const TodoItem = (props: TodoItemType) => {
   const { task, onUpdate, onDelete } = props;
   const [isEditing, setIsEditing] = useState(false);
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState(task.label);
 
   const handleUpdate = () => {
     onUpdate({ ...task, label: value });
@@ -41,7 +41,9 @@ export const TodoItem = (props: TodoItemType) => {
         <div className="flex items-center w-full h-full p-2">
           <div className="flex items-center w-3/4 h-full space-x-1">
             <input type="checkbox" />
-            <div className="text-purple-500 text-sm"> {task.label} </div>
+            <div className="text-purple-500 text-sm overflow-hidden overflow-ellipsis text-nowrap">
+              {task.label}
+            </div>
           </div>
           <div className="flex justify-around items-center w-1/4 h-full">
             <div
