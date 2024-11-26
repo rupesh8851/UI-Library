@@ -37,7 +37,7 @@ export const Todo = () => {
   };
 
   return (
-    <div className="p-2 max-w-md mx-auto mt-20 bg-white shadow-md rounded-md space-y-4">
+    <div className="p-4 max-w-fit mx-auto mt-20 bg-white shadow-xl rounded-md space-y-4">
       <div className="text-xl text-slate-500 ">Task Tracker</div>
       <div className="flex items-center w-72 space-x-1 ">
         <input
