@@ -29,14 +29,15 @@ export const AutoComplete = (props: AutoCompleteProps) => {
   };
 
   return (
-    <div className="block w-20 relative">
+    <div className="block w-56 relative">
       <input
         value={inputValue}
         placeholder={placeholder}
         onChange={handleChange}
+        className="h-10 px-2 w-full border-2 border-slate-500 rounded-md  "
       />
       {isDropdownOpen && (
-        <ul>
+        <ul className="w-full">
           {filteredOptions.length ? (
             filteredOptions?.map((option) => (
               <li

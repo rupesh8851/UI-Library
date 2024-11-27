@@ -14,14 +14,18 @@ export const DynamicSelect = () => {
   }, []);
 
   return (
-    <div className="max-w-md mx-auto mt-20 p-4 shadow-xl rounded-md space-y-2">
+    <div className="max-w-md mx-auto mt-20 p-4 shadow-xl rounded-md space-y-4">
       {selectedOption && (
         <div className="flex items-center space-x-2">
-          <span> Selected Language</span>
-          <span>{selectedOption?.label}</span>
+          <span> Selected Language: </span>
+          <span className="text-slate-900 font-semibold">
+            {selectedOption?.label}
+          </span>
         </div>
       )}
-      <AutoComplete options={options} onSelect={onSelect} />
+      <div className="flex flex-col justify-center items-center">
+        <AutoComplete options={options} onSelect={onSelect} />
+      </div>
     </div>
   );
 };
