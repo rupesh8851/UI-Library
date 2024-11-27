@@ -41,6 +41,10 @@ const sideBarItems: SideBarItemProps[] = [
     label: 'Todo',
     to: '/todo',
   },
+  {
+    label: 'Autocomplete',
+    to: '/autocomplete',
+  },
 ];
 
 export const SideBar = () => {
