@@ -24,7 +24,11 @@ export const DynamicSelect = () => {
         </div>
       )}
       <div className="flex flex-col justify-center items-center">
-        <AutoComplete options={options} onSelect={onSelect} />
+        <AutoComplete
+          options={options}
+          onSelect={onSelect}
+          placeholder="Please select a language"
+        />
       </div>
     </div>
   );
