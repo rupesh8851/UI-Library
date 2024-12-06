@@ -9,7 +9,7 @@ export const Layout = () => {
   return (
     <div className="flex flex-col h-screen w-screen">
       <Header />
-      <main className="flex h-full w-full">
+      <main className="flex h-[calc(100vh-64px)] w-full">
         <SideBar />
         <section className="h-full w-5/6">
           <Outlet />

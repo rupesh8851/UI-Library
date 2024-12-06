@@ -25,4 +25,5 @@ export type FeedsPageProps = {
 export type Tab = {
   label: string;
   component?: ReactNode;
+  icon?: IconType;
 };

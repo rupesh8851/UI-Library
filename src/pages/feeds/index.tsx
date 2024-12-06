@@ -1,3 +1,6 @@
+import { FaInstagram } from 'react-icons/fa';
+import { FaThreads } from 'react-icons/fa6';
+
 import { FeedsUsingApiObserver } from './FeedsUsingApiObserver.tsx';
 import { FeedsUsingProperty } from './FeedsUsingProperty.tsx';
 import { Tabs } from '../../components/Tabs.tsx';
@@ -6,12 +9,14 @@ import { Tab } from '../../ts/types.ts';
 export const FeedsWrapper = () => {
   const tabs: Tab[] = [
     {
-      label: 'Feeds',
+      label: 'Instagram',
       component: <FeedsUsingProperty />,
+      icon: FaInstagram,
     },
     {
-      label: 'FeedsWithObserver',
+      label: 'Threads',
       component: <FeedsUsingApiObserver />,
+      icon: FaThreads,
     },
   ];
 

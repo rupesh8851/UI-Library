@@ -37,7 +37,7 @@ export const FeedsUsingProperty = () => {
   return (
     <div
       id="feeds_container"
-      className="h-screen w-full overflow-auto flex flex-wrap justify-center items-center gap-4 mt-4"
+      className="h-full w-full overflow-auto flex flex-wrap justify-center items-center gap-4 mt-4"
     >
       {posts?.map((post: FeedsPageProps, index) => (
         <Card

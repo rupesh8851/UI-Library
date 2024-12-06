@@ -20,7 +20,7 @@ const headerItems: HeaderItemProps[] = [
 
 export const Header = () => {
   return (
-    <header className="flex py-2 px-4 items-center h-16 w-full bg-white shadow-xl">
+    <header className="flex py-2 px-4 items-center h-[64px] w-full bg-white shadow-xl">
       <nav className="mr-6">
         <img src={logo} className="size-12 shrink-0" alt="Logo" />
       </nav>
