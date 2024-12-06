@@ -34,16 +34,16 @@ const sideBarItems: SideBarItemProps[] = [
     to: '/comments',
   },
   {
-    label: 'Experiment',
-    to: '/experiment',
-  },
-  {
     label: 'Todo',
     to: '/todo',
   },
   {
     label: 'Autocomplete',
     to: '/autocomplete',
+  },
+  {
+    label: 'Experiment',
+    to: '/experiment',
   },
 ];
 
