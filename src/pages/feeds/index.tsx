@@ -3,7 +3,7 @@ import { FaThreads } from 'react-icons/fa6';
 
 import { FeedsUsingApiObserver } from './FeedsUsingApiObserver.tsx';
 import { FeedsUsingProperty } from './FeedsUsingProperty.tsx';
-import { Tabs } from '../../components/Tabs.tsx';
+import { Tabs } from '../../components/common/Tabs.tsx';
 import { Tab } from '../../ts/types.ts';
 
 export const FeedsWrapper = () => {

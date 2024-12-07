@@ -2,7 +2,7 @@
 
 import { FC } from 'react';
 
-import { FeedsPageProps } from '../ts/types.ts';
+import { FeedsPageProps } from '../../ts/types.ts';
 
 export const Card: FC<FeedsPageProps> = (props: FeedsPageProps) => {
   const { title, url, author } = props;

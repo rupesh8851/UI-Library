@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { Card } from '../../components/Card.tsx';
-import { ShimmerCard } from '../../components/ShimmerCard.tsx';
+import { Card } from '../../components/common/Card.tsx';
+import { ShimmerCard } from '../../components/common/ShimmerCard.tsx';
 import { FeedsPageProps } from '../../ts/types.ts';
 import { useDebounceCallback } from '../../utils.ts';
 

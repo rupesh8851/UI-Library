@@ -2,7 +2,7 @@
 
 import { FC, useState } from 'react';
 
-import { Tab } from '../ts/types.ts';
+import { Tab } from '../../ts/types.ts';
 
 interface TabsProps {
   tabs: Tab[];
