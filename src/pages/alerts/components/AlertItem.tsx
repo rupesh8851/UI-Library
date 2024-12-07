@@ -60,7 +60,10 @@ export const AlertItem = (props: AlertItemProps) => {
       </div>
 
       <div className="flex w-full h-1 bg-slate-100 ">
-        <span className={`flex bg-green-500`} style={{ width: width + '%' }} />
+        <span
+          className={`flex bg-green-500 transition-all duration-500`}
+          style={{ width: width + '%' }}
+        />
       </div>
     </div>
   );

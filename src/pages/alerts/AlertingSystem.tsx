@@ -60,7 +60,7 @@ export const AlertingSystem = () => {
   return (
     <div className="relative h-full w-full">
       <button
-        className="absolute top-8 left-8 flex p-2 shadow-xl bg-slate-400 text-white rounded-md hover:scale-110 active:ring-2 active:ring-offset-1 active:ring-slate-500"
+        className="absolute top-8 left-8 flex p-2 shadow-xl bg-purple-500 text-white rounded-md hover:scale-110 active:ring-2 active:ring-offset-1 active:ring-purple-500"
         onClick={createAlert}
       >
         + Add Alerts

@@ -18,28 +18,16 @@ const sideBarItems: SideBarItemProps[] = [
     to: '/feeds',
   },
   {
-    label: 'Accordion',
-    to: '/accordion',
-  },
-  {
     label: 'Alerting System',
     to: '/alerts',
-  },
-  {
-    label: 'Carousel',
-    to: '/carousel',
   },
   {
     label: 'Comment Section',
     to: '/comments',
   },
   {
-    label: 'Todo',
-    to: '/todo',
-  },
-  {
-    label: 'Autocomplete',
-    to: '/autocomplete',
+    label: 'UI Components',
+    to: '/ui-components',
   },
   {
     label: 'Experiment',

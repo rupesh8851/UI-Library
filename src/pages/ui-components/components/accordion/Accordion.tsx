@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { AccordionItem } from '../components/common/AccordionItem.tsx';
+import { AccordionItem } from './components/AccordionItem.tsx';
 
 type AccordionItemProps = {
   title: string;
