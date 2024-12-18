@@ -5,6 +5,5 @@ export type Option = {
 
 export type AutoCompleteProps = {
   options: Option[];
-  onSelect: (option: Option) => void;
   placeholder?: string;
 };

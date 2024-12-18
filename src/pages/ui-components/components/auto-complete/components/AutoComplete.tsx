@@ -5,7 +5,7 @@ import { ChangeEvent, useMemo, useRef, useState } from 'react';
 import { AutoCompleteProps, Option } from '../ts/types.ts';
 
 export const AutoComplete = (props: AutoCompleteProps) => {
-  const { options, placeholder, onSelect } = props;
+  const { options, placeholder } = props;
   const [inputValue, setInputValue] = useState('');
   const [selectedOption, setSelectedOption] = useState<Option>();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -27,7 +27,6 @@ export const AutoComplete = (props: AutoCompleteProps) => {
     setInputValue(option.label);
     setSelectedOption(option);
     setIsDropdownOpen(false);
-    onSelect(option);
   };
 
   const handleOnBlur = (event: React.FocusEvent<HTMLDivElement>) => {

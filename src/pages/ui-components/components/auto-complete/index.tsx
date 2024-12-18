@@ -1,41 +1,15 @@
 // @flow
 
-import { useCallback, useState } from 'react';
-
 import { AutoComplete } from './components/AutoComplete.tsx';
-import { AutoCompleteHeader } from './components/AutoCompleteHeader.tsx';
+import { AutoGoogleSearch } from './components/AutoGoogleSearch.tsx';
 import { options } from './ts/constant.ts';
-import { Option } from './ts/types.ts';
 
 export const DynamicSelect = () => {
-  const [selectedOption, setSelectedOption] = useState<Option>();
-
-  const onSelect = useCallback((option: Option) => {
-    setSelectedOption(() => option);
-  }, []);
-
   return (
-    <div className="flex flex-col gap-y-8">
-      <div className="p-4 shadow-xl rounded-md space-y-4">
-        {selectedOption && (
-          <AutoCompleteHeader
-            title="Select Language:"
-            value={selectedOption.value}
-          />
-        )}
-        <AutoComplete
-          options={options}
-          onSelect={onSelect}
-          placeholder="Please select a language"
-        />
-      </div>
+    <div className="h-full flex p-4 gap-x-6 bg-[url('https://bgr.com/wp-content/uploads/2022/03/AdobeStock_194080021.jpeg?quality=82&strip=all')] bg-cover ">
+      <AutoComplete options={options} placeholder="Please select a language" />
 
-      <div className="p-4 shadow-xl rounded-md space-y-4">
-        <AutoCompleteHeader
-          title="Searched Value:"
-          value={selectedOption?.value}
-        />
-      </div>
+      <AutoGoogleSearch />
     </div>
   );
 };
