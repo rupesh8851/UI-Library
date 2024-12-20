@@ -42,8 +42,12 @@ export const Comment: FC<CommentProps> = (props: CommentProps) => {
   }, [isReplying, isEditing]);
 
   return (
-    <div className="pl-4 mt-4 border-l-2 border-slate-400 flex flex-col justify-start ">
-      {!isEditing && <div>{comment.message}</div>}
+    <div className=" pl-4 mt-4 border-l-2 border-slate-400 flex flex-col justify-start ">
+      {!isEditing && (
+        <div className="max-w-fit mb-2 py-0.5 px-2 text-md bg-slate-100 rounded-md shadow-md">
+          {comment.message}
+        </div>
+      )}
       {!showMessage ? (
         <CommentBox
           comment={isEditing ? comment : undefined}

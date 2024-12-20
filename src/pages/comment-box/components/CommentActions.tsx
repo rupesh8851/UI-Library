@@ -10,9 +10,19 @@ export const CommentActions = ({
   initiateReplying,
 }: CommentActions) => {
   return (
-    <div className="flex items-center justify-start space-x-1">
-      <button onClick={initiateEditAction}> Edit</button>
-      <button onClick={initiateReplying}> Reply</button>
+    <div className="flex items-center space-x-2 ">
+      <button
+        className=" text-sm font-semibold text-purple-500 rounded-md hover:underline hover:underline-offset-2"
+        onClick={initiateEditAction}
+      >
+        Edit
+      </button>
+      <button
+        className=" text-sm font-semibold text-purple-500 rounded-md hover:underline hover:underline-offset-2"
+        onClick={initiateReplying}
+      >
+        Reply
+      </button>
     </div>
   );
 };
