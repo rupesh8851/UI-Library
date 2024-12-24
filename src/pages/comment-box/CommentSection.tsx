@@ -48,7 +48,7 @@ export const CommentSection = () => {
   };
 
   return (
-    <div className="pl-2 pb-2 h-full overflow-y-scroll">
+    <div className="pl-2 pb-2 h-full overflow-y-scroll bg-[url('https://images.pexels.com/photos/3367850/pexels-photo-3367850.jpeg?auto=compress&cs=tinysrgb&w=800')] bg-cover">
       {comment ? (
         <Comment
           comment={comment}

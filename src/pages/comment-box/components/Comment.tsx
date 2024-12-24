@@ -45,13 +45,13 @@ export const Comment: FC<CommentProps> = (props: CommentProps) => {
     <div className="pl-4 mt-4 border-l-2 border-slate-400 flex flex-col justify-start ">
       {!isEditing && (
         <div className="space-y-0.5 mb-1">
-          <div className="w-fit flex items-center space-x-2">
+          <div className="w-fit flex space-x-1">
             <img
               alt="user_profile"
               src={comment.imageUrl}
               className="size-6 rounded-full"
             />
-            <div className="max-w-fit px-2 text-md text-slate-500 font-semibold">
+            <div className="max-w-fit px-2 text-md text-white font-semibold">
               {comment.userName}
             </div>
           </div>
