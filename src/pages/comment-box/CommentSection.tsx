@@ -47,7 +47,6 @@ export const CommentSection = () => {
     });
   };
 
-  console.log({ comment });
   return (
     <div className="pl-2 pb-2 h-full overflow-y-scroll">
       {comment ? (

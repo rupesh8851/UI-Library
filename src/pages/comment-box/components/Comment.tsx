@@ -42,10 +42,22 @@ export const Comment: FC<CommentProps> = (props: CommentProps) => {
   }, [isReplying, isEditing]);
 
   return (
-    <div className=" pl-4 mt-4 border-l-2 border-slate-400 flex flex-col justify-start ">
+    <div className="pl-4 mt-4 border-l-2 border-slate-400 flex flex-col justify-start ">
       {!isEditing && (
-        <div className="max-w-fit mb-2 py-0.5 px-2 text-md bg-slate-100 rounded-md shadow-md">
-          {comment.message}
+        <div className="space-y-0.5 mb-1">
+          <div className="w-fit flex items-center space-x-2">
+            <img
+              alt="user_profile"
+              src={comment.imageUrl}
+              className="size-6 rounded-full"
+            />
+            <div className="max-w-fit px-2 text-md text-slate-500 font-semibold">
+              {comment.userName}
+            </div>
+          </div>
+          <div className="ml-8 mt-1 max-w-fit py-0.5 px-2 text-md bg-slate-100 rounded-md shadow-md">
+            {comment.message}
+          </div>
         </div>
       )}
       {!showMessage ? (
@@ -55,11 +67,13 @@ export const Comment: FC<CommentProps> = (props: CommentProps) => {
           createComment={handleCommentOperation}
           onClose={handleCloseCommentBox}
         />
-      ) : null}
-      <CommentActions
-        initiateEditAction={initiateEditing}
-        initiateReplying={initiateReplying}
-      />
+      ) : (
+        <CommentActions
+          initiateEditAction={initiateEditing}
+          initiateReplying={initiateReplying}
+        />
+      )}
+
       {comment.replies?.map((reply) => (
         <Comment
           key={reply.id}

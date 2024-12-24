@@ -5,6 +5,7 @@ export type CommentType = {
   userId: string;
   userName: string;
   message: string;
+  imageUrl: string;
   replies: CommentType[];
 };
 

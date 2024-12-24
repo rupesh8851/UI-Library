@@ -1,9 +1,10 @@
 // @flow
 
-import { FC, useEffect, useState } from 'react';
+import { FC, useCallback, useEffect, useState } from 'react';
 
 import { RxCross2 } from 'react-icons/rx';
 
+import { generateRandomName, getRandomUserPic } from '../../../ts/utils.ts';
 import { OperationTypes } from '../ts/enums.ts';
 import { CommentBoxProps, CommentType } from '../ts/types.ts';
 
@@ -12,19 +13,20 @@ export const CommentBox: FC<CommentBoxProps> = (props) => {
 
   const [message, setMessage] = useState<string>(comment?.message || '');
 
-  const handleOperation = () => {
+  const handleOperation = useCallback(() => {
     const id = Date.now().toString();
 
     const newComment: CommentType = {
       id: comment?.id || id,
-      userName: comment?.userName || 'John',
+      userName: comment?.userName || generateRandomName(),
       userId: comment?.userId || id,
       message: message,
       replies: comment?.replies || [],
+      imageUrl: getRandomUserPic(),
     };
 
     createComment(newComment);
-  };
+  }, [comment, message]);
 
   useEffect(() => {
     setMessage(comment?.message || '');
@@ -34,7 +36,7 @@ export const CommentBox: FC<CommentBoxProps> = (props) => {
 
   return (
     <div
-      className={`block p-1 mt-2 bg-white max-w-sm  relative space-y-1 rounded-md shadow-md border-2 border-purple-500`}
+      className={`block p-1 mt-2  bg-white max-w-sm  relative space-y-1 rounded-md shadow-md border-2 border-purple-500`}
     >
       <textarea
         className="w-full h-20 p-2 border-gray-500 focus:outline-none resize-none"
@@ -50,8 +52,9 @@ export const CommentBox: FC<CommentBoxProps> = (props) => {
       </button>
       <div className="flex justify-end items-center space-x-2">
         <button
-          className="py-1 px-4 bg-purple-700 text-white rounded-md hover:opacity-90 "
+          className="py-1 px-4 bg-purple-700 text-white rounded-md hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed"
           onClick={handleOperation}
+          disabled={!message}
         >
           {operation === OperationTypes.CREATE ? 'Post' : 'Update'}
         </button>
