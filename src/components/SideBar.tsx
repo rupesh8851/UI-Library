@@ -30,6 +30,10 @@ const sideBarItems: SideBarItemProps[] = [
     to: '/ui-components',
   },
   {
+    label: 'On Boarding',
+    to: '/on-boarding',
+  },
+  {
     label: 'Experiment',
     to: '/experiment',
   },
