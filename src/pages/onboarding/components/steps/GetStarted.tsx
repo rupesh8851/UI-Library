@@ -11,10 +11,8 @@ export const GetStarted = () => {
   const {
     control,
     formState: { errors },
-    watch,
   } = useFormContext<OnBoardingFormType>();
 
-  console.log({ errors }, watch());
   const errorInStep = errors?.[OnBoardingSteps.GET_STARTED];
 
   return (

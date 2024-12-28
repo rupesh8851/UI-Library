@@ -2,8 +2,8 @@ import { Input } from './Input.tsx';
 import { useFormControl } from '../../hooks/useFormControl.ts';
 
 type FormInputProps = {
-  value: string | number;
-  onChange: (value: string | number) => void;
+  value: string;
+  onChange: (value: string) => void;
   placeholder?: string;
 };
 export const FormInput = (props: FormInputProps) => {

@@ -1,5 +1,3 @@
-// @flow
-
 import { ReactNode } from 'react';
 
 type FormWrapperProps = {

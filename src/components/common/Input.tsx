@@ -1,8 +1,8 @@
 import { ChangeEvent } from 'react';
 
 type InputProps = {
-  value: string | number;
-  onChange: (value: string | number) => void;
+  value: string;
+  onChange: (value: string) => void;
   placeholder?: string;
   isInvalid?: boolean;
   isReadOnly?: boolean;

@@ -9,7 +9,7 @@ export const onBoardingSchema = z.object({
   [OnBoardingSteps.ACCOUNT_DETAILS]: z.object({
     name: z.string().min(1, { message: 'Name is Required' }),
     companyName: z.string().min(1, { message: 'Company name is Required' }),
-    phoneNumber: z.number().min(1, { message: 'Phone number is Required' }),
+    phoneNumber: z.string().min(10, { message: 'Phone number is Required' }),
   }),
   [OnBoardingSteps.CREATE]: z.object({
     email: z.string().email('Invalid email format'),
