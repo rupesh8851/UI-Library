@@ -1,6 +1,6 @@
 // @flow
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormProvider, useForm } from 'react-hook-form';
@@ -22,7 +22,6 @@ export const OnBoarding = () => {
   });
   const [activeStep, setActiveStep] = useState<number>(0);
   const {
-    watch,
     formState: { errors },
     trigger,
     handleSubmit,
@@ -44,16 +43,6 @@ export const OnBoarding = () => {
   };
 
   const onSubmit = (data: OnBoardingFormType) => {};
-
-  useEffect(() => {
-    const subscribe = watch(async () => {
-      await trigger(`${onBoardingSteps[activeStep]}`);
-    });
-
-    return () => {
-      subscribe.unsubscribe();
-    };
-  }, [activeStep, watch]);
 
   console.log({ errors });
   return (

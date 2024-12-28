@@ -9,6 +9,7 @@ import { OnBoardingFormType } from '../../ts/types.ts';
 
 export const AccountDetails = () => {
   const {
+    trigger,
     control,
     formState: { errors },
   } = useFormContext<OnBoardingFormType>();
@@ -25,7 +26,10 @@ export const AccountDetails = () => {
           render={({ field: { onChange, value } }) => {
             return (
               <FormInput
-                onChange={onChange}
+                onChange={(value) => {
+                  onChange(value);
+                  trigger(`${OnBoardingSteps.ACCOUNT_DETAILS}.name`);
+                }}
                 value={value}
                 placeholder="Enter the Name"
               />
@@ -42,7 +46,10 @@ export const AccountDetails = () => {
           render={({ field: { onChange, value } }) => {
             return (
               <FormInput
-                onChange={onChange}
+                onChange={(value) => {
+                  onChange(value);
+                  trigger(`${OnBoardingSteps.ACCOUNT_DETAILS}.companyName`);
+                }}
                 value={value}
                 placeholder="Enter the Company Name"
               />
@@ -61,7 +68,10 @@ export const AccountDetails = () => {
           render={({ field: { onChange, value } }) => {
             return (
               <FormInput
-                onChange={onChange}
+                onChange={(value) => {
+                  onChange(value);
+                  trigger(`${OnBoardingSteps.ACCOUNT_DETAILS}.phoneNumber`);
+                }}
                 value={value}
                 placeholder="Enter the Phone Number"
               />

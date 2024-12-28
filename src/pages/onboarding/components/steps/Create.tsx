@@ -9,6 +9,7 @@ import { OnBoardingFormType } from '../../ts/types.ts';
 
 export const Create = () => {
   const {
+    trigger,
     control,
     formState: { errors },
   } = useFormContext<OnBoardingFormType>();
@@ -25,7 +26,10 @@ export const Create = () => {
           render={({ field: { onChange, value } }) => {
             return (
               <FormInput
-                onChange={onChange}
+                onChange={(value) => {
+                  onChange(value);
+                  trigger(`${OnBoardingSteps.CREATE}.email`);
+                }}
                 value={value}
                 placeholder="Enter the Email Id"
               />
@@ -42,7 +46,10 @@ export const Create = () => {
           render={({ field: { onChange, value } }) => {
             return (
               <FormInput
-                onChange={onChange}
+                onChange={(value) => {
+                  onChange(value);
+                  trigger(`${OnBoardingSteps.CREATE}.password`);
+                }}
                 value={value}
                 placeholder="Create the Password"
               />
@@ -59,7 +66,10 @@ export const Create = () => {
           render={({ field: { onChange, value } }) => {
             return (
               <FormInput
-                onChange={onChange}
+                onChange={(value) => {
+                  onChange(value);
+                  trigger(`${OnBoardingSteps.CREATE}.confirmPassword`);
+                }}
                 value={value}
                 placeholder="Confirm the Password"
               />

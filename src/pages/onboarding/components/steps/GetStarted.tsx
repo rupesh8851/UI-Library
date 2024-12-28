@@ -9,6 +9,7 @@ import { OnBoardingFormType } from '../../ts/types.ts';
 
 export const GetStarted = () => {
   const {
+    trigger,
     control,
     formState: { errors },
   } = useFormContext<OnBoardingFormType>();
@@ -25,7 +26,10 @@ export const GetStarted = () => {
           render={({ field: { onChange, value } }) => {
             return (
               <FormInput
-                onChange={onChange}
+                onChange={(value) => {
+                  onChange(value);
+                  trigger(`${OnBoardingSteps.GET_STARTED}.projectName`);
+                }}
                 value={value}
                 placeholder="Enter the Project Name"
               />
