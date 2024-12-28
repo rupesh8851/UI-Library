@@ -9,7 +9,7 @@ export const FormLabel = (props: FormLabelProps) => {
 
   return (
     <div className="flex items-center space-x-2">
-      <label className="text-md text-slate-500">{label}</label>
+      <label className="text-md text-slate-600">{label}</label>
       {rightIcon}
     </div>
   );

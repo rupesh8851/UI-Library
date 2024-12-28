@@ -17,7 +17,7 @@ export const AccountDetails = () => {
   const errorInStep = errors?.[OnBoardingSteps.ACCOUNT_DETAILS];
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full space-y-4">
       <FormControl isInvalid={!!errorInStep?.name}>
         <FormLabel label="Name" />
         <Controller

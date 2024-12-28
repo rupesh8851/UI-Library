@@ -17,7 +17,7 @@ export const Create = () => {
   const errorInStep = errors?.[OnBoardingSteps.CREATE];
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full space-y-4">
       <FormControl isInvalid={!!errorInStep?.email}>
         <FormLabel label="Email Id" />
         <Controller
