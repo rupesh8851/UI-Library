@@ -59,12 +59,17 @@ export const CreateProject = (props: CreateProjectProps) => {
   return (
     <div className="fixed inset-0">
       <div
+        aria-describedby="Overlay"
         className="absolute inset-0 bg-black opacity-50"
         onClick={onClose}
       ></div>
 
-      <div className="relative z-10 left-2/3 top-1/2 w-2/5 -translate-x-2/3 -translate-y-1/2 bg-white px-4 py-2 shadow-2xl rounded-md ">
+      <div className="relative z-10 left-2/3 top-1/2 w-2/5 -translate-x-2/3 -translate-y-1/2 bg-white shadow-2xl rounded-md overflow-hidden">
         <FormWrapper
+          header={{
+            onClose: onClose,
+            headerText: 'Create New Project',
+          }}
           footer={{
             slotStart: (
               <>
@@ -94,7 +99,7 @@ export const CreateProject = (props: CreateProjectProps) => {
               <div className="flex flex-col w-full justify-center items-center">
                 <Stepper steps={steps} currentStep={activeStep} width="150px" />
                 <Divider />
-                <div className="flex flex-col w-full my-4">
+                <div className="flex px-4 flex-col w-full my-4">
                   <FormProvider {...formMethods}>
                     {onBoardingSteps[activeStep] ===
                       OnBoardingSteps.GET_STARTED && <GetStarted />}
