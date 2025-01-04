@@ -7,7 +7,7 @@ import { AlertingSystem } from './pages/alerts/AlertingSystem.tsx';
 import { CommentSection } from './pages/comment-box/CommentSection.tsx';
 import { Experiment } from './pages/Experiment.tsx';
 import { FeedsWrapper } from './pages/feeds';
-import { OnBoarding } from './pages/onboarding/OnBoarding.tsx';
+import { SurveyPage } from './pages/survey';
 import { UIComponents } from './pages/ui-components/UIComponents.tsx';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
             <Route path="/comments" element={<CommentSection />} />
             <Route path="/experiment" element={<Experiment />} />
             <Route path="/ui-components" element={<UIComponents />} />
-            <Route path="/on-boarding" element={<OnBoarding />} />
+            <Route path="/survey" element={<SurveyPage />} />
           </Route>
           {/* Standalone route */}
           <Route path="/about" element={<About />} />
