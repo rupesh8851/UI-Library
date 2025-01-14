@@ -55,7 +55,6 @@ export const CreateProject = (props: CreateProjectProps) => {
     onCreate(data);
   };
 
-  console.log({ errors });
   return (
     <div className="fixed inset-0">
       <div
