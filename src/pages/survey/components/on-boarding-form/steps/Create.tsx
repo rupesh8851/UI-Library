@@ -1,11 +1,11 @@
 import { Controller, useFormContext } from 'react-hook-form';
 
-import { FormControl } from '../../../../components/common/FormControl.tsx';
-import { FormErrorTextHelper } from '../../../../components/common/FormErrorTextHelper.tsx';
-import { FormInput } from '../../../../components/common/FormInput.tsx';
-import { FormLabel } from '../../../../components/common/FormLabel.tsx';
-import { OnBoardingSteps } from '../../ts/enums.ts';
-import { OnBoardingFormType } from '../../ts/types.ts';
+import { FormControl } from '../../../../../components/common/FormControl.tsx';
+import { FormErrorTextHelper } from '../../../../../components/common/FormErrorTextHelper.tsx';
+import { FormInput } from '../../../../../components/common/FormInput.tsx';
+import { FormLabel } from '../../../../../components/common/FormLabel.tsx';
+import { OnBoardingSteps } from '../../../ts/enums.ts';
+import { OnBoardingFormType } from '../../../ts/types.ts';
 
 export const Create = () => {
   const {

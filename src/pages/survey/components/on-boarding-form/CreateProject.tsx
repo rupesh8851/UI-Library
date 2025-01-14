@@ -3,15 +3,15 @@ import { useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormProvider, useForm } from 'react-hook-form';
 
-import { Divider } from '../../../components/common/Divider.tsx';
-import { FormWrapper } from '../../../components/common/FormWrapper.tsx';
-import { Stepper } from '../../../components/common/Stepper.tsx';
-import { onBoardingSteps } from '../ts/constants.ts';
-import { OnBoardingSteps } from '../ts/enums.ts';
-import { OnBoardingFormType, onBoardingSchema } from '../ts/types.ts';
 import { AccountDetails } from './steps/AccountDetails.tsx';
 import { Create } from './steps/Create.tsx';
 import { GetStarted } from './steps/GetStarted.tsx';
+import { Divider } from '../../../../components/common/Divider.tsx';
+import { FormWrapper } from '../../../../components/common/FormWrapper.tsx';
+import { Stepper } from '../../../../components/common/Stepper.tsx';
+import { onBoardingSteps } from '../../ts/constants.ts';
+import { OnBoardingSteps } from '../../ts/enums.ts';
+import { OnBoardingFormType, onBoardingSchema } from '../../ts/types.ts';
 
 type CreateProjectProps = {
   onCreate: (data: OnBoardingFormType) => void;

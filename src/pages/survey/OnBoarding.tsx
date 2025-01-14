@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { CreateProject } from './components/CreateProject.tsx';
+import { CreateProject } from './components/on-boarding-form/CreateProject.tsx';
 
 export const OnBoarding = () => {
   const [open, setOpen] = useState(false);
