@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { OnBoardingSteps } from './enums.ts';
+import { OnBoardingSteps, PatientAssessmentSteps } from './enums.ts';
 
 export const onBoardingSchema = z.object({
   [OnBoardingSteps.GET_STARTED]: z.object({
@@ -69,3 +69,43 @@ export const onBoardingSchema = z.object({
 });
 
 export type OnBoardingFormType = z.infer<typeof onBoardingSchema>;
+
+export const patientAssessmentSchema = z.object({
+  [PatientAssessmentSteps.PATIENT_INFORMATION]: z.object({
+    firstName: z.string().min(1, { message: 'First name is required' }),
+    lastName: z.string().min(1, { message: 'Last name is required' }),
+    socialSecurityNumber: z.string().regex(/^\d{9}$/, {
+      message: 'Your SSN must be a 9-digit number',
+    }),
+    dob: z.string().optional(),
+    concerns: z.string().optional(),
+  }),
+  [PatientAssessmentSteps.HEALTH_HISTORY]: z.object({
+    diabetes: z.boolean(),
+    bloodPressure: z.boolean(),
+    highCholesterol: z.boolean(),
+    otherHealthConcerns: z.string().optional(),
+  }),
+  [PatientAssessmentSteps.SOCIAL_HISTORY]: z.object({
+    smoker: z.object({}),
+  }),
+  [PatientAssessmentSteps.SURGICAL_HISTORY]: z.object({
+    surgicalHistory: z.string().optional(),
+  }),
+  [PatientAssessmentSteps.FAMILY_HISTORY]: z.object({
+    familyHistory: z.array(
+      z.object({
+        relation: z.string(),
+        healthCondition: z.string(),
+        familyHistoryOfCancer: z.string(),
+      }),
+    ),
+  }),
+  [PatientAssessmentSteps.SYMPTOMS]: z.object({
+    pastSymptoms: z.array(z.string()),
+    signature: z.string(),
+    dateOfSignature: z.string(),
+  }),
+});
+
+export type PatientAssessmentFormType = z.infer<typeof patientAssessmentSchema>;
